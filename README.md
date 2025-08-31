@@ -20,4 +20,4 @@ A responsive and interactive **Job Board Website** built using **HTML, CSS, and 
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/job-portal-frontend.git
+  https://github.com/Aryanmaurya07/Job-portal-landing-page.git
