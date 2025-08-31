@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HireRight — Find Your Dream Job</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Professional job portal landing page built with pure HTML, CSS & JavaScript.">
+</head>
+<body>
+  <!-- ===== Top Notification / Promo ===== -->
+  <div class="topbar">
+    <span>🎉 New: One profile, Quick Apply everywhere. Try it now!</span>
+    <button class="topbar-close" aria-label="Close top bar">×</button>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#hero">
+        <span class="brand-logo">💼</span>
+        <strong>HireRight</strong>
+      </a>
+      <nav class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#categories" class="nav-link">Categories</a>
+        <a href="#jobs" class="nav-link">Jobs</a>
+        <a href="#stats" class="nav-link">Stats</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <button id="themeToggle" class="btn btn-ghost" aria-label="Toggle theme">🌓</button>
+        <button id="openEmployerModal" class="btn btn-ghost">Post a Job</button>
+        <a href="#newsletter" class="btn btn-primary">Sign In</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#features" class="mobile-link">Features</a>
+      <a href="#categories" class="mobile-link">Categories</a>
+      <a href="#jobs" class="mobile-link">Jobs</a>
+      <a href="#stats" class="mobile-link">Stats</a>
+      <a href="#testimonials" class="mobile-link">Testimonials</a>
+      <a href="#faq" class="mobile-link">FAQ</a>
+      <button id="openEmployerModalMobile" class="btn w-100 mt-8">Post a Job</button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero section">
+    <div class="container grid-2">
+      <div class="hero-left">
+        <div class="pill">✅ Verified roles updated daily</div>
+        <h1 class="hero-title">
+          Find your <span class="gradient-text">dream job</span> today
+        </h1>
+        <p class="hero-sub">
+          Search curated opportunities from India’s top startups & enterprises.
+          <span id="typewriter" class="typewriter"></span>
+        </p>
+
+        <!-- Search Bar -->
+        <div class="searchbar">
+          <div class="input-wrap">
+            <span class="icon">🔎</span>
+            <input id="searchQuery" type="text" placeholder="Job title, company, or skill"/>
+          </div>
+          <div class="input-wrap">
+            <span class="icon">📍</span>
+            <input id="searchCity" type="text" placeholder="City or Remote"/>
+          </div>
+          <button id="searchBtn" class="btn btn-primary">Search Jobs</button>
+        </div>
+
+        <!-- Quick filters -->
+        <div class="quick-tags">
+          <button class="tag" data-q="React">React</button>
+          <button class="tag" data-q="Node">Node</button>
+          <button class="tag" data-q="Design">Design</button>
+          <button class="tag" data-q="Remote">Remote</button>
+          <button class="tag" data-q="Fresher">Fresher</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="mockup-card" data-reveal>
+          <div class="mockup-header">
+            <span>🎯 Recommended for you</span>
+            <span class="dot green"></span><span class="dot yellow"></span><span class="dot red"></span>
+          </div>
+          <ul class="mockup-list" id="mockupList">
+            <!-- JS inserts 3 “recommended” mini-cards here -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title">Why <span class="gradient-text">choose us?</span></h2>
+      <p class="section-sub">Everything you need to land faster—no fluff.</p>
+      <div class="cards grid-3">
+        <div class="card hover-lift" data-reveal>
+          <div class="card-icon">⚡</div>
+          <h3>Quick Apply</h3>
+          <p>Use one profile to apply across multiple companies in seconds.</p>
+        </div>
+        <div class="card hover-lift" data-reveal>
+          <div class="card-icon">🛡️</div>
+          <h3>Verified Companies</h3>
+          <p>All listings are manually vetted to reduce spam & ghosting.</p>
+        </div>
+        <div class="card hover-lift" data-reveal>
+          <div class="card-icon">📊</div>
+          <h3>Smart Match</h3>
+          <p>We score jobs to your skills so you see the most relevant roles first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section id="categories" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Explore <span class="gradient-text">categories</span></h2>
+      <p class="section-sub">Click a category to filter jobs instantly.</p>
+      <div class="cat-row">
+        <button class="cat-btn active" data-cat="All">🌐 All</button>
+        <button class="cat-btn" data-cat="Engineering">🧠 Engineering</button>
+        <button class="cat-btn" data-cat="Design">🎨 Design</button>
+        <button class="cat-btn" data-cat="Marketing">📣 Marketing</button>
+        <button class="cat-btn" data-cat="Product">🚀 Product</button>
+        <button class="cat-btn" data-cat="HR">👥 HR</button>
+        <button class="cat-btn" data-cat="Operations">⏱️ Operations</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== JOBS ===== -->
+  <section id="jobs" class="section">
+    <div class="container">
+      <div class="jobs-head">
+        <h2 class="section-title">Featured <span class="gradient-text">jobs</span></h2>
+        <div class="jobs-controls">
+          <label class="switch">
+            <input type="checkbox" id="remoteOnly"/>
+            <span class="slider"></span>
+          </label>
+          <span>Remote only</span>
+          <select id="sortBy" class="select">
+            <option value="newest">Newest</option>
+            <option value="salaryHigh">Salary (High → Low)</option>
+            <option value="salaryLow">Salary (Low → High)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="jobGrid" class="job-grid">
+        <!-- JS renders job cards -->
+      </div>
+
+      <div class="center mt-24">
+        <button id="loadMore" class="btn btn-secondary">Load More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section id="stats" class="section alt">
+    <div class="container grid-3 stats-grid">
+      <div class="stat" data-counter="12400"> <div class="stat-n" data-counter-num>0</div><div class="stat-l">Jobs Posted</div></div>
+      <div class="stat" data-counter="2150">  <div class="stat-n" data-counter-num>0</div><div class="stat-l">Companies</div></div>
+      <div class="stat" data-counter="98000"> <div class="stat-n" data-counter-num>0</div><div class="stat-l">Hires</div></div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title">Loved by <span class="gradient-text">candidates</span> & recruiters</h2>
+      <div class="carousel" data-reveal>
+        <button class="car-btn" id="carPrev" aria-label="Previous">‹</button>
+        <div class="car-track" id="carTrack">
+          <!-- Slides inserted by JS -->
+        </div>
+        <button class="car-btn" id="carNext" aria-label="Next">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Frequently asked <span class="gradient-text">questions</span></h2>
+      <div class="faq">
+        <div class="faq-item" data-reveal>
+          <button class="faq-q">Is HireRight free for job seekers? <span>+</span></button>
+          <div class="faq-a">Yes, 100% free. Premium is optional for resume reviews & priority applications.</div>
+        </div>
+        <div class="faq-item" data-reveal>
+          <button class="faq-q">How do you verify companies? <span>+</span></button>
+          <div class="faq-a">We manually review employer domains, GST details, and activity history.</div>
+        </div>
+        <div class="faq-item" data-reveal>
+          <button class="faq-q">Do you support freshers and remote roles? <span>+</span></button>
+          <div class="faq-a">Absolutely. Use the Remote toggle and “Fresher” quick-tag to filter instantly.</div>
+        </div>
+        <div class="faq-item" data-reveal>
+          <button class="faq-q">Can employers post for free? <span>+</span></button>
+          <div class="faq-a">We offer 1 free post/month. For more, upgrade to a hiring plan.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA EMPLOYER ===== -->
+  <section id="cta" class="section">
+    <div class="container cta">
+      <div class="cta-left">
+        <h3>Are you an employer?</h3>
+        <p>Find the right talent 3× faster with smart matching & instant reach.</p>
+      </div>
+      <button id="openEmployerModal2" class="btn btn-primary">Post a Job Now</button>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section id="newsletter" class="section alt">
+    <div class="container newsletter">
+      <h3>Stay in the loop</h3>
+      <p>Get the latest jobs & hiring trends in your inbox.</p>
+      <form id="newsletterForm" class="newsletter-form" novalidate>
+        <input id="newsletterEmail" type="email" placeholder="Enter your email"/>
+        <button class="btn btn-secondary" type="submit">Subscribe</button>
+      </form>
+      <p class="hint" id="newsletterHint"></p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand-footer"><span class="brand-logo">💼</span><strong>HireRight</strong></div>
+        <p class="muted">Built with vanilla HTML, CSS & JS. No frameworks — only vibes.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#hero">About</a>
+        <a href="#features">Features</a>
+        <a href="#faq">Support</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="javascript:void(0)">Terms</a>
+        <a href="javascript:void(0)">Privacy</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="socials">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="GitHub">🐙</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> HireRight. All rights reserved.</div>
+  </footer>
+
+  <!-- ===== Employer Modal ===== -->
+  <div id="employerModal" class="modal" aria-hidden="true" aria-labelledby="employerTitle" role="dialog">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="document">
+      <div class="modal-header">
+        <h3 id="employerTitle">Post a Job</h3>
+        <button class="modal-close" data-close aria-label="Close">×</button>
+      </div>
+      <form id="employerForm" class="modal-body" novalidate>
+        <div class="grid-2 gap">
+          <div class="field">
+            <label>Company Name</label>
+            <input type="text" id="emCompany" placeholder="Acme Inc." required/>
+          </div>
+          <div class="field">
+            <label>Job Title</label>
+            <input type="text" id="emTitle" placeholder="Frontend Engineer" required/>
+          </div>
+        </div>
+        <div class="grid-2 gap">
+          <div class="field">
+            <label>Location</label>
+            <input type="text" id="emLocation" placeholder="Bengaluru / Remote" required/>
+          </div>
+          <div class="field">
+            <label>Salary (₹ per annum)</label>
+            <input type="number" id="emSalary" placeholder="1200000" min="1" required/>
+          </div>
+        </div>
+        <div class="field">
+          <label>Tags (comma separated)</label>
+          <input type="text" id="emTags" placeholder="React, TypeScript, Tailwind"/>
+        </div>
+        <div class="field">
+          <label>Category</label>
+          <select id="emCategory" required>
+            <option value="Engineering">Engineering</option>
+            <option value="Design">Design</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Product">Product</option>
+            <option value="HR">HR</option>
+            <option value="Operations">Operations</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Job</button>
+        </div>
+      </form>
+      <div id="employerSuccess" class="modal-success" hidden>
+        <h4>🎉 Job Posted!</h4>
+        <p>Your job has been added to the featured list (local demo).</p>
+        <button class="btn" data-close>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
